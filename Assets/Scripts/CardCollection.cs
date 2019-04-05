@@ -7,22 +7,22 @@ public abstract class CardCollection : MonoBehaviour
 {
 
 	private String _label;
-	private Queue<Card> _cards;
+	private Stack<Card> _cards;
 
 	public CardCollection(String label)
 	{
-		this._cards = new Queue<Card>();
+		this._cards = new Stack<Card>();
 		this._label = label;
 	}
 
 	public void addCard(Card card)
 	{
-		_cards.Enqueue(card);
+		_cards.Push(card);
 	}
 
 	public void removeCard()
 	{
-		_cards.Dequeue();
+		_cards.Pop();
 	}
 
 	public Card GetCard(int i)
